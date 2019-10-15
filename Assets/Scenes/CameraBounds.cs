@@ -17,16 +17,16 @@ public class CameraBounds : MonoBehaviour
         float cameraHeight = camera.orthographicSize;
         float cameraWidth = camera.aspect * cameraHeight;
 
-        top.transform.localScale = new Vector2(cameraWidth * 2, boundWidth);
+        top.transform.localScale = new Vector3(cameraWidth * 2, boundWidth, left.transform.localScale.z);
         top.transform.position = new Vector2(camera.transform.position.x, camera.transform.position.y + cameraHeight);
 
-        right.transform.localScale = new Vector2(boundWidth, cameraHeight * 2);
+        right.transform.localScale = new Vector3(boundWidth, cameraHeight * 2, left.transform.localScale.z);
         right.transform.position = new Vector2(camera.transform.position.x + cameraWidth, camera.transform.position.y);
 
-        bottom.transform.localScale = new Vector2(cameraWidth * 2, boundWidth);
+        bottom.transform.localScale = new Vector3(cameraWidth * 2, boundWidth, left.transform.localScale.z);
         bottom.transform.position = new Vector2(camera.transform.position.x, camera.transform.position.y - cameraHeight);
 
-        left.transform.localScale = new Vector2(boundWidth, cameraHeight * 2);
+        left.transform.localScale = new Vector3(boundWidth, cameraHeight * 2, left.transform.localScale.z);
         left.transform.position = new Vector2(camera.transform.position.x - cameraWidth, camera.transform.position.y);
     }
 
